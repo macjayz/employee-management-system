@@ -1,0 +1,53 @@
+<h1>Employee Management</h1>
+
+<h2>Add Employee</h2>
+<form (ngsubmit)="addEmployee()">
+  <label>ID:</label>
+  <input type="number" [(ngModel)]="newEmployee.id" required>
+  <br>
+  <label>Name:</label>
+  <input type="text" [(ngModel)]="newEmployee.name" required>
+  <br>
+  <label>Position:</label>
+  <input type="text" [(ngModel)]="newEmployee.position" required>
+  <br>
+  <button type="submit">Add</button>
+  <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+</form>
+
+<h2>Employee List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.position }}</td>
+      <td>
+        <button (click)="openEditModal(employee)">Edit</button>
+        <button (click)="deleteEmployee(employee)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="modal" *ngIf="selectedEmployee">
+  <h2>Edit Employee</h2>
+  <form (submit)="updateEmployee()">
+    <label>Name:</label>
+    <input type="text" [(ngModel)]="selectedEmployee.name" required>
+    <br>
+    <label>Position:</label>
+    <input type="text" [(ngModel)]="selectedEmployee.position" required>
+    <br>
+    <button type="submit">Update</button>
+    <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+  </form>
+</div>

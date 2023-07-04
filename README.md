@@ -1,27 +1,82 @@
-# EmployeeManagement
+# EmployeeManagementSystem
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
+To run the Employee Management System application built with Angular, follow the instructions below. Ensure that you have Node.js and Angular CLI installed on your machine before proceeding.
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Prerequisites
+1. Node.js: Ensure you have Node.js installed on your machine. You can download and install it from the official Node.js website (https://nodejs.org/).
 
-## Code scaffolding
+2. Angular CLI: Install Angular CLI globally using npm with the following command in your terminal or command prompt:
+```
+npm install -g @angular/cli
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Setup
 
-## Build
+1. Clone the repository:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+git clone <repository-url>
+cd employee-management-system
+```
 
-## Running unit tests
+2. Install project dependencies:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install
+```
 
-## Running end-to-end tests
+3. API Endpoint Configuration:
+   - Before running the application, you need to set up a backend API to handle CRUD operations for employees. The Angular application expects the API to be available at a specific endpoint. You can either use a mock API, or set up a real backend server using technologies like Node.js with Express, Django, or any other server-side technology of your choice. Make sure to set the API endpoint URL in the Angular application.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. Run the application:
 
-## Further help
+```bash
+ng serve
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This will start the development server, and the application will be accessible at `http://localhost:4200/`.
+
+## Features
+
+1. Displaying a list of employees in a table format with columns: ID, Name, Position, and Actions.
+
+2. Adding new employees:
+   - A form for adding new employees with fields for ID, Name, and Position.
+   - Form input validation with appropriate error messages.
+   - Adding a new employee to the list upon successful form submission.
+   - Clearing the form after adding a new employee.
+
+3. Reading employee data:
+   - Fetching the employee list from the API endpoint using the HttpClient module.
+   - Displaying the employee list in the table.
+
+4. Updating employee data:
+   - "Edit" button in each row of the employee table.
+   - Clicking the "Edit" button opens a modal or a separate page with a form pre-filled with the employee's current data.
+   - Allowing editing the employee's Name and Position.
+   - Form input validation with appropriate error messages.
+   - Updating the employee's data upon successful form submission.
+
+5. Deleting employees:
+   - "Delete" button in each row of the employee table.
+   - Clicking the "Delete" button displays a confirmation dialog.
+   - If confirmed, deletes the employee from the list and updates the table accordingly.
+
+6. Angular Reactive Forms:
+   - Using Angular Reactive Forms for handling form inputs and validations.
+
+7. Error Handling:
+   - Proper error handling and display of error messages when API requests fail.
+
+8. CSS Styling:
+   - The application has a visually appealing user interface with proper CSS styling.
+
+## Additional Notes
+
+- Replace `<repository-url>` with the actual URL of the repository if it is hosted on a remote platform like GitHub, GitLab, or Bitbucket.
+
+- Ensure that the backend API is up and running and that the Angular application is configured to make API requests to the correct endpoint.
+
+- For real-world deployment, consider configuring your application for production and hosting it on a web server.
